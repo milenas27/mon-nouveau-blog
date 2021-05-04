@@ -1,36 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <!-- En-tête de la page -->
-        <meta charset="utf-8" />
-        <title>My first blog</title>
-    </head>
+{% extends 'blog/base.html' %}
 
-    <body>
-        <header>
-            <h1><a href="/">Un blog</a></h1>
-        </header>
-    	<!--<p>Bienvenue sur mon premier blog ! Hé oui moi je blogue, comme les <em>jeuns</em>.</p>
-    	<h2><mark>Avertissement !</mark></h2>
-    	<p>Ce blog est rempli de bêtises (ne pas juger svp).</p>-->
-    	{% for post in posts %}
-		    <article>
-		        <time>published: {{ post.published_date }}</time>
-		        <h2><a href="">{{ post.title }}</a></h2>
-		        <p>{{ post.text|linebreaksbr }}</p>
-		    </article>
-		{% endfor %}
-
-        <!--<article>
-            <time>publication: 14.06.2014, 12:14</time>
-            <h2><a href="">Mon second article</a></h2>
-            <p>Troisième liste, de définition (moins utilisée mais j'ai envie de voir à quoi elle ressemble :p) :</p>
-    	<dl>
-    		<dt>Pining</dt><dd>Just look at Crowley and Aziraphale, you'll understand.</dd>
-    	</dl>
-    	Turns out s'not that pretty. Still, I'll keep it in mind.
-        </article>-->
-    	
-    	
-    </body>
-</html>
+{% block content %}
+	{% for post in posts %}
+	    <article class="post">
+	        <time class="date">
+	            {{ post.published_date }}
+	        </time>
+	        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+	        <p>{{ post.text|linebreaksbr }}</p>
+	    </article>
+	{% endfor %}
+{% endblock %}
