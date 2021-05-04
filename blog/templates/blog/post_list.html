@@ -10,40 +10,26 @@
         <header>
             <h1><a href="/">Un blog</a></h1>
         </header>
-    	<p>Bienvenue sur mon premier blog ! Hé oui moi je blogue, comme les <em>jeuns</em>.</p>
+    	<!--<p>Bienvenue sur mon premier blog ! Hé oui moi je blogue, comme les <em>jeuns</em>.</p>
     	<h2><mark>Avertissement !</mark></h2>
-    	<p>Ce blog est rempli de bêtises (ne pas juger svp).</p>
-    	<article>
-            <time>publication: 14.06.2014, 12:14</time>
-            <h2><a href="">Mon premier article</a></h2>
-    		<p><strong>Tout</strong> ce qui me passe par la tête.<br/>Quand je dis <em>tout</em>, c'est vraiment tout.</p>
-    		<p>Exemple avec une liste non ordonnée :</p>
-    		<ul>
-	    		<li>Good Omens</li>
-	    		<li>Star Wars</li>
-	    		<li>Charlie and the chocolate factory</li>
-    		</ul>
-    		<p>Et avec une ordonnée :</p>
-    		<ol>
-    			<li>How would you feel</li>
-	    		<li>If I told you I <em>loved</em> you ?</li>
-	    		<li>It's just something that I want to do</li>
-	    		<li>I've been taking my time, spending my life</li>
-	    		<li>Falling deeeper and deeper in love with you</li>
-	    	</ol>
-    		Credits : Ed Sheeran (extrait de <em>How would you feel</em> sur son album <strong>Divide</strong>).
-        </article>
+    	<p>Ce blog est rempli de bêtises (ne pas juger svp).</p>-->
+    	{% for post in posts %}
+		    <article>
+		        <time>published: {{ post.published_date }}</time>
+		        <h2><a href="">{{ post.title }}</a></h2>
+		        <p>{{ post.text|linebreaksbr }}</p>
+		    </article>
+		{% endfor %}
 
-        <article>
+        <!--<article>
             <time>publication: 14.06.2014, 12:14</time>
             <h2><a href="">Mon second article</a></h2>
             <p>Troisième liste, de définition (moins utilisée mais j'ai envie de voir à quoi elle ressemble :p) :</p>
     	<dl>
     		<dt>Pining</dt><dd>Just look at Crowley and Aziraphale, you'll understand.</dd>
     	</dl>
-    	<!--<br/> pas bsesoin de revenir à la ligne après la fin d'une liste !, comme en LaTeX héhé-->
     	Turns out s'not that pretty. Still, I'll keep it in mind.
-        </article>
+        </article>-->
     	
     	
     </body>
