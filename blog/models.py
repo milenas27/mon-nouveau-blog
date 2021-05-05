@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+#from taggit.managers import TaggableManager
 
 
 class Post(models.Model):
@@ -16,3 +17,20 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+#class Food(models.Model): #à modifier
+#    # ... fields here
+
+#    tags = TaggableManager()
+
+
+###### tag ######
+#if request.method == "POST":
+#    form = MyFormClass(request.POST)
+#    if form.is_valid():
+#        obj = form.save(commit=False)
+#        obj.user = request.user
+#        obj.save()
+#        # Without this next line the tags won't be saved.
+#        form.save_m2m()
