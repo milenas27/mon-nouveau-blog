@@ -3,11 +3,26 @@ h1 a, h2 a {
     font-family: 'Lobster';
 }
 
+h5 a {
+    color: #1F85DE;
+    font-family: 'Roboto Condensed';
+}
+
+h6 a {
+    color: #C4DDF3;
+    font-family: 'Roboto Condensed' ;
+}
+
+p a{
+    color: #C4DDF3;
+    font-family: 'Roboto Condensed';
+}
+
 .page-header {
     background-color: #C25100;
     margin-top: 0;
-    margin-bottom: 40px;
-    padding: 20px 20px 20px 40px;
+    margin-bottom: 60px;
+    padding: 30px 30px 30px 40px;
 }
 
 .page-header h1,
@@ -26,11 +41,26 @@ h4 {
     font-family: 'Lobster', cursive;
 }
 
+h5,
+h6 {
+    font-family: 'Roboto Condensed', cursive;
+}
+
 .date {
     color: #828282;
 }
 
 .save {
+    float: right;
+}
+
+.login {
+    color :#C4DDF3;
+    float: right;
+}
+
+.logout {
+    color :#C4DDF3;
     float: right;
 }
 
